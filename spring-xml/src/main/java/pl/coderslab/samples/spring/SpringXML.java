@@ -6,8 +6,6 @@ public class SpringXML {
 
 	public static void main(String[] args) {
 		//Car carAsOurObject = new Car();
-
-
 		ClassPathXmlApplicationContext context =
 				new ClassPathXmlApplicationContext("beans.xml");
 
