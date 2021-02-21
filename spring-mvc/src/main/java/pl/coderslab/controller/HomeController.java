@@ -14,13 +14,18 @@ public class HomeController {
 	//@RequestMapping("/hello")
 	@GetMapping("/hello")
 	public String hello() {
-		return "index.jsp";
+		return "index";
 	}
 
 	@GetMapping("/helloWorld")
 	@ResponseBody
 	public String helloWorld() {
 		return "Hello World";
+	}
+
+	@GetMapping("/helloView")
+	public String helloView() {
+		return "home";
 	}
 
 	@GetMapping("/body")
