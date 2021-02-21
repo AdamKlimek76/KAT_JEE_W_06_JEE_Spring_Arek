@@ -17,6 +17,12 @@ public class HomeController {
 		return "index.jsp";
 	}
 
+	@GetMapping("/helloWorld")
+	@ResponseBody
+	public String helloWorld() {
+		return "Hello World";
+	}
+
 	@GetMapping("/body")
 	@ResponseBody // bez tego szuka widoku
 	public String body() {
