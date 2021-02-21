@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="andrzej" class="pl.coderslab.samples.spring.Driver">
+		<constructor-arg name="name" value="Andrzej"/>
+	</bean>
+
+	<bean id="ola" class="pl.coderslab.samples.spring.Driver">
+		<constructor-arg name="name" value="Ola"/>
+	</bean>
+
+	<bean id="carBean" class="pl.coderslab.samples.spring.Car">
+		<constructor-arg name="name" value="Passat" />
+		<constructor-arg name="speed" value="200" />
+		<property name="driver" ref="ola" />
+	</bean>
+
+</beans>
