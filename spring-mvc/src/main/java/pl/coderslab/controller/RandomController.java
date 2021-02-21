@@ -16,5 +16,5 @@ public class RandomController {
 			@PathVariable int max) {
 		return String.valueOf(new Random().nextInt(max - min + 1) + min);
 	}
-	
+
 }
