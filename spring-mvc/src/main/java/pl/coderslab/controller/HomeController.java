@@ -1,12 +1,17 @@
 package pl.coderslab.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
+	private static final Logger log = LoggerFactory.getLogger(HomeController.class);
+	private final Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
+
+
 
 	//@RequestMapping("/hello")
 	@GetMapping("/hello")
@@ -30,5 +35,14 @@ public class HomeController {
 	@ResponseBody
 	public String mBankGood() {
 		return "ęśąćż";
+	}
+
+	@GetMapping("/log")
+	@ResponseBody
+	public String log() {
+		//System.out.println("Somebody requested log");
+		log.info("Somebody requested log");
+		log.debug("{} + {} = {}", 2, 2, 4);
+		return "logged.";
 	}
 }
