@@ -11,8 +11,6 @@ public class HomeController {
 	private static final Logger log = LoggerFactory.getLogger(HomeController.class);
 	private final Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-
-
 	//@RequestMapping("/hello")
 	@GetMapping("/hello")
 	public String hello() {
@@ -44,5 +42,20 @@ public class HomeController {
 		log.info("Somebody requested log");
 		log.debug("{} + {} = {}", 2, 2, 4);
 		return "logged.";
+	}
+
+
+	@GetMapping("/exception")
+	@ResponseBody
+	public String exception() {
+		String notInitialized = null;
+
+		try {
+			notInitialized.toUpperCase();
+			return "good";
+		} catch(NullPointerException e) {
+			log.error("Not initialized string", e);
+			return "error";
+		}
 	}
 }
